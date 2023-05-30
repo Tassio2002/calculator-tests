@@ -5,26 +5,32 @@ describe("Test App Component", () => {
   it("should render login component", () => {
     const { getByText } = render(<App />);
 
-    expect(getByText("Faça seu Login")).toBeInTheDocument();
+    expect(getByText("Login")).toBeInTheDocument();
+  });
+
+  it("should render span component", () => {
+    const { getByText } = render(<App />);
+
+    expect(
+      getByText("Please enter your login and password!")
+    ).toBeInTheDocument();
   });
 
   it("should render email input", () => {
     const { getByPlaceholderText } = render(<App />);
 
-    expect(getByPlaceholderText("Digite seu email..")).toBeInTheDocument();
+    expect(getByPlaceholderText("Username")).toBeInTheDocument();
   });
 
   it("should render password input", () => {
     const { getByPlaceholderText } = render(<App />);
 
-    expect(getByPlaceholderText("Digite sua senha..")).toBeInTheDocument();
+    expect(getByPlaceholderText("Password")).toBeInTheDocument();
   });
 
   it("should render login button", () => {
     const { getByText } = render(<App />);
 
-    expect(getByText("Entrar")).toBeInTheDocument();
+    expect(getByText("Enter")).toBeInTheDocument();
   });
-
-  
 });
