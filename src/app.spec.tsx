@@ -93,6 +93,6 @@ describe("Test input validation", () => {
     fireEvent.click(enterButton);
 
     waitFor(() => expect(location.pathname).toEqual("/calculator"));
-    waitFor(() => expect(getByText("Calculator Page")).toBeInTheDocument());
+    waitFor(() => expect(getByText("Calculator")).toBeInTheDocument());
   });
 });
