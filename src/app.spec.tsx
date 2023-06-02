@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { getByDisplayValue, render } from "@testing-library/react";
 import App from "./App";
 
 describe("Test App Component", () => {
@@ -29,8 +29,8 @@ describe("Test App Component", () => {
   });
 
   it("should render login button", () => {
-    const { getByText } = render(<App />);
+    const { getByDisplayValue } = render(<App />);
 
-    expect(getByText("Enter")).toBeInTheDocument();
+    expect(getByDisplayValue("Enter")).toBeInTheDocument();
   });
 });
