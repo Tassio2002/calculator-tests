@@ -1,5 +1,5 @@
 import { fireEvent, render } from "@testing-library/react";
-import { CalculatorPage } from ".";
+import { CalculatorPage } from "./index";
 
 describe("Test caluclator component renderiation", () => {
   it("should render calculator Title", () => {

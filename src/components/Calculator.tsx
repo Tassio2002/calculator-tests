@@ -58,7 +58,7 @@ export const Calculator = () => {
         <Button onClick={() => insertChar(8)} id="num8" text={8} />
         <Button onClick={() => insertChar(9)} id="num9" text={9} />
         <Button onClick={() => insertChar(0)} id="num0" text={0} />
-        <Button onClick={() => insertChar(",")} id="comma" text="," />
+        <Button onClick={() => insertChar(".")} id="comma" text="." />
         <Button onClick={() => mountOperation("=")} id="equal" text="=" />
       </div>
     </div>
