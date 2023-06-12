@@ -6,7 +6,7 @@ export const Calculator = () => {
   const [display, setDisplay] = useState("");
 
   const insertChar = (val: string | number) => {
-    setDisplay(display + val);
+    setDisplay(`${display}${val}`);
   };
 
   const clearDisplay = () => {
@@ -25,13 +25,22 @@ export const Calculator = () => {
     }
   };
 
-  const mountOperation = (expression: string) => {
-    expression = display
-    // eslint-disable-next-line
-    const operation = eval(expression);
-    setDisplay(operation)
-  }
+  const isFloat = (val: number) => {
+    if (!Number.isNaN(val) && !Number.isInteger(val)) {
+      return true;
+    }
+    return false;
+  };
   
+  const mountOperation = () => {
+    // eslint-disable-next-line
+    const operation: number = eval(display);
+    let result
+    const test = isFloat(operation)
+    test ? result = operation.toFixed(2) : result = operation.toFixed(0) 
+    setDisplay(result);
+  };
+
   return (
     <div className="w-1/4 h-[500px] p-4 rounded-3xl bg-black">
       <div className="h-1/4 flex justify-around items-end text-white">
@@ -59,7 +68,7 @@ export const Calculator = () => {
         <Button onClick={() => insertChar(9)} id="num9" text={9} />
         <Button onClick={() => insertChar(0)} id="num0" text={0} />
         <Button onClick={() => insertChar(".")} id="comma" text="." />
-        <Button onClick={() => mountOperation("=")} id="equal" text="=" />
+        <Button onClick={() => mountOperation()} id="equal" text="=" />
       </div>
     </div>
   );
