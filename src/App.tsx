@@ -1,10 +1,13 @@
+import { Routes, Route } from "react-router-dom";
 import { LoginBox } from "./components/LoginBox";
+import { CalculatorPage } from "./pages/CalculatorPage";
 
 function App() {
   return (
-    <main className="w-screen h-screen flex justify-center items-center bg-gradient-to-br from-fuchsia-500 via-red-600 to-violet-700">
-      <LoginBox />
-    </main>
+    <Routes>
+      <Route path="/" element={<LoginBox />} />
+      <Route path="calculator" element={<CalculatorPage />} />
+    </Routes>
   );
 }
 
