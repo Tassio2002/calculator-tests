@@ -1,6 +1,7 @@
 /*eslint-disable no-restricted-globals*/
 import { render, fireEvent, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
+
 import App from "./App";
 import { LoginBox } from "./components/LoginBox";
 
@@ -44,8 +45,8 @@ describe("Test render Login component", () => {
 
   it("should render login button", () => {
     const { getByText } = render(app);
-
-    expect(getByText("Enter")).toBeInTheDocument();
+    
+    expect(getByDisplayValue("Enter")).toBeInTheDocument();
   });
 });
 
